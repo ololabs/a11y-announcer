@@ -1,15 +1,16 @@
 import Ember from 'ember';
-import Router from '../router';
+
+const { inject, Router, run } = Ember;
 
 export default {
   name: 'add-announcer-to-router',
-  initialize: function(app) {
+  initialize(app) {
     Router.reopen({
-      announcer: Ember.inject.service('announcer'),
+      announcer: inject.service('announcer'),
       didTransition: function() {
         this._super(...arguments);
 
-        this._timerId = Ember.run.later(() => {
+        this._timerId = run.later(this, () => {
           if (this.isDestroying || this.isDestroyed) { return; }
 
           let pageTitle = Ember.$('title').html().trim();
