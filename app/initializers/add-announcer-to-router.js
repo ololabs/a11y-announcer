@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { later, cancel } from '@ember/runloop';
 import { inject as service } from '@ember/service';
-import Router from '../router';
+import Router from '@ember/routing/router';
 
 export default {
   name: 'add-announcer-to-router',
