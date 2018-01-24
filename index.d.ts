@@ -10,4 +10,5 @@ export default class A11yAnnouncerService extends Service {
   message: string;
   announceMessage?: string;
   announceTone: AnnounceTone;
+  announce(message: string, tone: AnnounceTone): void;
 }
