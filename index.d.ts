@@ -12,3 +12,9 @@ export default class A11yAnnouncerService extends Service {
   announceTone: AnnounceTone;
   announce(message: string, tone: AnnounceTone): void;
 }
+
+declare module '@ember/service' {
+  interface Registry {
+    announcer: A11yAnnouncerService;
+  }
+}
