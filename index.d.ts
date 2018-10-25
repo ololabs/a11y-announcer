@@ -1,10 +1,6 @@
-import Service from '@ember/service';
+import Service from "@ember/service";
 
-export const enum AnnounceTone {
-  Off = 'off',
-  Polite = 'polite',
-  Assertive = 'assertive',
-}
+export type AnnounceTone = "off" | "polite" | "assertive";
 
 export default class A11yAnnouncerService extends Service {
   message: string;
@@ -13,7 +9,7 @@ export default class A11yAnnouncerService extends Service {
   announce(message: string, tone: AnnounceTone): void;
 }
 
-declare module '@ember/service' {
+declare module "@ember/service" {
   interface Registry {
     announcer: A11yAnnouncerService;
   }
